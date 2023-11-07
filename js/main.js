@@ -2,6 +2,7 @@ import '/css/style.css'
 import javascriptLogo from '/images/javascript.svg'
 import viteLogo from '/images/vite.svg'
 import { setupCounter } from '/js/counter.js'
+import 'dayjs'
 
 document.querySelector('#app').innerHTML = `
   <div>
