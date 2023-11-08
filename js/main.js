@@ -1,3 +1,4 @@
+import dayjsMin from 'dayjs/dayjs.min'
 import '/css/style.css'
 import javascriptLogo from '/images/javascript.svg'
 import viteLogo from '/images/vite.svg'
@@ -13,6 +14,10 @@ document.querySelector('#app').innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!</h1>
+    <div class="event" data-date="oct,30,2023">
+      <h2> today's date</h2>
+      <div class="date"></div>
+    </div>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
@@ -23,3 +28,12 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+const event = document.querySelectorAll('event');
+
+event.forEach( event => {
+  const date = dayjs(event.dataset.date).format(MMM,DD,YYYY);
+  const dateElement = event.querySelector('date');
+  dateElement.innerText = date;
+});
+console.log('event')
